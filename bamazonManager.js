@@ -191,13 +191,11 @@ function createNewProduct() {
 			type: 'input',
 			name: 'price',
 			message: 'What is the price per unit?',
-			validate: validateNumeric
 		},
 		{
 			type: 'input',
 			name: 'stock_quantity',
 			message: 'How many items are in stock?',
-			validate: validateInteger
 		}
 	]).then(function(input) {
 	
