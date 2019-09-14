@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
 	user: 'root',
 
 
-	password: '',
+	password: 'L0615zt32a',
 	database: 'Bamazon'
 });
 
@@ -121,32 +121,6 @@ function displayLowInventory() {
 	})
 }
 
-
-function validateInteger(value) {
-	var integer = Number.isInteger(parseFloat(value));
-	var sign = Math.sign(value);
-
-	if (integer && (sign === 1)) {
-		return true;
-	} else {
-		return 'Please enter a whole non-zero number.';
-	}
-}
-
-
-function validateNumeric(value) {
-	
-	var number = (typeof parseFloat(value)) === 'number';
-	var positive = parseFloat(value) > 0;
-
-	if (number && positive) {
-		return true;
-	} else {
-		return 'Please enter a positive number for the unit price.'
-	}
-}
-
-
 function addInventory() {
 	
 
@@ -156,14 +130,12 @@ function addInventory() {
 			type: 'input',
 			name: 'item_id',
 			message: 'Please enter the Item ID for stock_count update.',
-			validate: validateInteger,
 			filter: Number
 		},
 		{
 			type: 'input',
 			name: 'quantity',
 			message: 'How many would you like to add?',
-			validate: validateInteger,
 			filter: Number
 		}
 	]).then(function(input) {
